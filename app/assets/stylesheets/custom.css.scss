@@ -1,0 +1,72 @@
+/*colors*/
+$white: #fff;
+$black: #000000;
+// Navbar
+$navbar-border-radius: 0px;
+$navbar-inverse-bg: #00FF59;
+$navbar-inverse-border: none;
+$navbar-inverse-color:#145DCC;
+$navbar-inverse-link-hover-color: $black;
+$navbar-inverse-brand-hover-color: $black;
+// Border radius
+$border-radius-base: 0px;
+// Font
+$font-family-sans-serif: 'Open Sans', sans-serif;
+// $font-size-base: 13px;
+
+
+
+.navbar {
+  background:rgba(255,255,255,0.5)
+}
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar_brand:hover,
+.navbar-inverse .navbar-nav > li > a:hover  {
+  color: $black;
+  background: repeating-linear-gradient(
+  to bottom,
+  rgba(255,255,255,0),
+  rgba(255,255,255,0) 47px,
+  $black 3px,
+  $black 50px
+  );
+    transition-property: width;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+    transition-delay: 2s;
+}
+
+
+.navbar-inverse .navbar-nav > .active > a {
+
+  background: repeating-linear-gradient(
+  to bottom,
+  rgba(255,255,255,0),
+  rgba(255,255,255,0) 47px,
+  $black 3px,
+  $black 50px
+  );
+    transition-property: width;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+    transition-delay: 2s;
+    
+
+  color: $black;
+}
+
+
+
+.btn {
+  border-radius: 0px;
+}
+body {
+  padding-top: 60px;
+}
+
+
+
+.jumbotron {
+}
+// $navbar-inverse-link-disabled-color:;
+// $navbar-inverse-link-disabled-bg

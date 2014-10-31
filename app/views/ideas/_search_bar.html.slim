@@ -1,0 +1,9 @@
+.row
+  .col-md-10.col-sm-8.col-md-offset-1
+    .row
+      .col-md-3
+        = link_to "New Idea", new_idea_path, class: "btn btn-default"
+      .col-md-7.col-md-offset-2.form-inline
+        = form_tag(ideas_path, method: "get") do
+        = text_field_tag("search", params[:search], class: "form-control")
+        = submit_tag(value='Search', class: "btn btn-default")

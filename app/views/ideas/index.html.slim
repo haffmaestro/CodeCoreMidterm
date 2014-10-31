@@ -1,0 +1,26 @@
+h1 Submitted Ideas
+-@ideas.each do |idea|
+  h3=link_to idea.title, idea
+  p=idea.description
+  .row
+    .col-md-12
+      h6 
+        |By: 
+        =idea.user.first_name
+      .button-group
+        -unless idea.user_permission(current_user)
+          -if idea.joins_for(current_user)==nil
+            =link_to 'Join', idea_joins_path(idea), class:"btn btn-default", method: :post
+          -else
+            =link_to 'Leave', idea_join_path(idea, idea.joins_for(current_user)), class: "btn btn-default", method: :delete
+          -if idea.likes_for(current_user)==nil
+            =link_to 'Like', idea_likes_path(idea), class:"btn btn-default", method: :post
+          -else
+            =link_to 'Unlike', idea_like_path(idea, idea.likes_for(current_user)), class: "btn btn-default", method: :delete
+        label.pull-right
+          |Users: 
+          =idea.joins.count
+          |  |
+          |Likes: 
+          =idea.likes.count
+  hr
